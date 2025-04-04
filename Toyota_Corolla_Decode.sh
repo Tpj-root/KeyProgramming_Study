@@ -80,40 +80,64 @@ FILENAME_2=./BIN_FILES/Toyota_/Corolla/Data_set_2/ATMEL_AT93C56_EEPROM2025040215
 FILENAME_3=./BIN_FILES/Toyota_/Corolla/Data_set_3/ATMEL_AT93C56_EEPROM20250403100253_Read.bin 
 
 
+# vehicle_info
+# check_file_size "${FILENAME_0}"
+# echo "----------------------------------"
+# echo -n "Key 1  : ID : "
+# keyvalue "${FILENAME_0}" 128 129 0 1 | tr '[:lower:]' '[:upper:]'
+# echo -n "Key 2  : ID : "
+# keyvalue "${FILENAME_0}" 136 137 8 9 | tr '[:lower:]' '[:upper:]'
+# echo -n "Key 3  : ID : "
+# keyvalue "${FILENAME_0}" 148 149 20 21 | tr '[:lower:]' '[:upper:]'
+# echo "----------------------------------"
+# check_file_size "${FILENAME_1}"
+# echo "----------------------------------"
+# echo -n "Key 1  : ID : "
+# keyvalue "${FILENAME_1}" 128 129 0 1 | tr '[:lower:]' '[:upper:]'
+# echo -n "Key 2  : ID : "
+# keyvalue "${FILENAME_1}" 136 137 8 9 | tr '[:lower:]' '[:upper:]'
+# echo -n "Key 3  : ID : "
+# keyvalue "${FILENAME_1}" 148 149 20 21 | tr '[:lower:]' '[:upper:]'
+# echo "----------------------------------"
+# check_file_size "${FILENAME_2}"
+# echo "----------------------------------"
+# echo -n "Key 1  : ID : "
+# keyvalue "${FILENAME_2}" 128 129 0 1 | tr '[:lower:]' '[:upper:]'
+# echo -n "Key 2  : ID : "
+# keyvalue "${FILENAME_2}" 136 137 8 9 | tr '[:lower:]' '[:upper:]'
+# echo -n "Key 3  : ID : "
+# keyvalue "${FILENAME_2}" 148 149 20 21 | tr '[:lower:]' '[:upper:]'
+# echo "----------------------------------"
+# check_file_size "${FILENAME_3}"
+# echo "----------------------------------"
+# echo -n "Key 1  : ID : "
+# keyvalue "${FILENAME_3}" 128 129 0 1 | tr '[:lower:]' '[:upper:]'
+# echo -n "Key 2  : ID : "
+# keyvalue "${FILENAME_3}" 136 137 8 9 | tr '[:lower:]' '[:upper:]'
+# echo -n "Key 3  : ID : "
+# keyvalue "${FILENAME_3}" 148 149 20 21 | tr '[:lower:]' '[:upper:]'
+# echo "----------------------------------"
+# 
+# 
+
+# clean code
+print_vehicle_info() {
+    local filename="$1"
+    echo "----------------------------------"
+    check_file_size "$filename"
+    echo "----------------------------------"
+    echo -n "Key 1  : ID : "
+    keyvalue "$filename" 128 129 0 1 | tr '[:lower:]' '[:upper:]'
+    echo -n "Key 2  : ID : "
+    keyvalue "$filename" 136 137 8 9 | tr '[:lower:]' '[:upper:]'
+    echo -n "Key 3  : ID : "
+    keyvalue "$filename" 148 149 20 21 | tr '[:lower:]' '[:upper:]'
+    echo "----------------------------------"
+}
+
+# Usage
 vehicle_info
-check_file_size "${FILENAME_0}"
-echo "----------------------------------"
-echo -n "Key 1  : ID : "
-keyvalue "${FILENAME_0}" 128 129 0 1 | tr '[:lower:]' '[:upper:]'
-echo -n "Key 2  : ID : "
-keyvalue "${FILENAME_0}" 136 137 8 9 | tr '[:lower:]' '[:upper:]'
-echo -n "Key 3  : ID : "
-keyvalue "${FILENAME_0}" 148 149 20 21 | tr '[:lower:]' '[:upper:]'
-echo "----------------------------------"
-check_file_size "${FILENAME_1}"
-echo "----------------------------------"
-echo -n "Key 1  : ID : "
-keyvalue "${FILENAME_1}" 128 129 0 1 | tr '[:lower:]' '[:upper:]'
-echo -n "Key 2  : ID : "
-keyvalue "${FILENAME_1}" 136 137 8 9 | tr '[:lower:]' '[:upper:]'
-echo -n "Key 3  : ID : "
-keyvalue "${FILENAME_1}" 148 149 20 21 | tr '[:lower:]' '[:upper:]'
-echo "----------------------------------"
-check_file_size "${FILENAME_2}"
-echo "----------------------------------"
-echo -n "Key 1  : ID : "
-keyvalue "${FILENAME_2}" 128 129 0 1 | tr '[:lower:]' '[:upper:]'
-echo -n "Key 2  : ID : "
-keyvalue "${FILENAME_2}" 136 137 8 9 | tr '[:lower:]' '[:upper:]'
-echo -n "Key 3  : ID : "
-keyvalue "${FILENAME_2}" 148 149 20 21 | tr '[:lower:]' '[:upper:]'
-echo "----------------------------------"
-check_file_size "${FILENAME_3}"
-echo "----------------------------------"
-echo -n "Key 1  : ID : "
-keyvalue "${FILENAME_3}" 128 129 0 1 | tr '[:lower:]' '[:upper:]'
-echo -n "Key 2  : ID : "
-keyvalue "${FILENAME_3}" 136 137 8 9 | tr '[:lower:]' '[:upper:]'
-echo -n "Key 3  : ID : "
-keyvalue "${FILENAME_3}" 148 149 20 21 | tr '[:lower:]' '[:upper:]'
-echo "----------------------------------"
+print_vehicle_info "${FILENAME_0}"
+print_vehicle_info "${FILENAME_1}"
+print_vehicle_info "${FILENAME_2}"
+print_vehicle_info "${FILENAME_3}"
