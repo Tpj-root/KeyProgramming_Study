@@ -117,6 +117,24 @@ When `FFFF` is set:
 
 
 
+---
+
+So, there is no algorithm working in the background.
+It's not algorithm-based — just a static replacement:
+
+```
+00000d80: c1eb 0e50 52f1 1034 1293 66e9 10b3 0464
+```
+
+It's simply replacing fixed memory blocks and writing a constant value.
+
+
+---
+
+
+
+
+
 
 
 You're essentially asking:
