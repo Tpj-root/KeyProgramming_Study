@@ -137,7 +137,6 @@ It's simply replacing fixed memory blocks and writing a constant value.
 
 
 
-You're essentially asking:
 
 > **What kind of algorithm or function could transform one 16-byte binary block into another at the same offset?**
 
